@@ -1,95 +1,60 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image'
+import Link from 'next/link'
+import Logo from '/public/images/hexdrinker-dark.png'
+import styles from '@/app/page.module.scss'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <main className={styles.main}>
+        <section className={styles['main__leftSection']}>
+          <Image
+            src={Logo}
+            alt={'logo'}
+          />
+        </section>
+        <section className={styles['main__rightSection']}>
+          <span className={styles['main__rightSectionTitle']}>
+            지금 일어나고 있는 일
+          </span>
+          <div className={styles['main__rightSectionDescription']}>
+            지금 가입하세요.
+          </div>
+          <div className={styles['main__authSection']}>
+            <Link
+              className={`${styles['main__button']} ${styles['main__button--blue']}`}
+              href='/i/flow/signup'
+            >
+              계정 만들기
+            </Link>
+            <div className={styles['main__signupDescription']}>
+              가입하시려면{' '}
+              <span className={styles['main__signupDescription--link']}>
+                쿠키 사용
+              </span>
+              을 포함해{' '}
+              <span className={styles['main__signupDescription--link']}>
+                이용약관
+              </span>
+              과{' '}
+              <span className={styles['main__signupDescription--link']}>
+                개인정보 처리방침
+              </span>
+              에 동의해야 합니다.
+            </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+            <p className={styles['main__loginDescription']}>
+              이미 트위터에 가입하셨나요?
+            </p>
+            <Link
+              className={`${styles['main__button']} ${styles['main__button--black']}`}
+              href='/i/flow/login'
+            >
+              로그인
+            </Link>
+          </div>
+        </section>
+      </main>
+    </>
+  )
 }
