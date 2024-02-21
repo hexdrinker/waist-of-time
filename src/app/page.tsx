@@ -48,7 +48,7 @@ export default function Home() {
             </p>
             <Link
               className={`${styles['main__button']} ${styles['main__button--black']}`}
-              href='/i/flow/login'
+              href='/login'
             >
               로그인
             </Link>
